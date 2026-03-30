@@ -2,18 +2,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap");
+@font-face {
+  font-family: "Euclid Circular B Semibold Placeholder";
+  src: local("Arial");
+  ascent-override: 92.42%;
+  descent-override: 24.77%;
+  line-gap-override: 0%;
+  size-adjust: 108.2%;
+}
 
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Clash Display";
-  src: url("../fonts/ClashDisplay-Variable.woff2") format("woff2"),
-       url("../fonts/ClashDisplay-Variable.woff") format("woff"),
-       url("../fonts/ClashDisplay-Variable.ttf") format("truetype");
-  font-weight: 200 700;
-  font-display: swap;
+  font-family: "Euclid Circular B";
+  src: url("EuclidCircularB-Bold.eot");
+  src:
+    local("Euclid Circular B Bold"),
+    local("EuclidCircularB-Bold"),
+    url("EuclidCircularB-Bold.eot?#iefix") format("embedded-opentype"),
+    url("EuclidCircularB-Bold.woff2") format("woff2"),
+    url("EuclidCircularB-Bold.woff") format("woff"),
+    url("EuclidCircularB-Bold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal;
 }
+
 
 @theme {
   --color-surface: #131316;
@@ -30,7 +43,7 @@
   --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui;
   --font-dm-sans: "DM Sans", ui-sans-serif, system-ui;
   --font-manrope: "Manrope", ui-sans-serif, system-ui;
-  --font-clash-display: "Clash Display", sans-serif;
+  --font-euclid-circular-b: "Euclid Circular B", ui-sans-serif, system-ui;
 
   --tracking-hero: -0.04em;
   --tracking-tech: 0.05em;
@@ -46,4 +59,6 @@
   --breakpoint-xl: 1218px;
   --breakpoint-useCase1: 1110px;
   --breakpoint-useCase2: 520px;
+    --breakpoint-useCase3: 440px;
+  --breakpoint-h-md: 828px;
 }

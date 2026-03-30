@@ -12,7 +12,7 @@ interface ButtonProps {
 
 const  ButtonStyle: React.FC<ButtonProps> = ( ButtonProps ) => {
   return ( 
-    <button className={cn(`"px-8 py-3 bg-primary-fixed w-37 text-surface-low rounded-[5px] cursor-pointer h-fit", ${ButtonProps.className}`)} onClick={ButtonProps.onClick} disabled={ButtonProps.disabled}> 
+    <button className={cn("bg-primary-fixed px-8 py-3 text-surface-low rounded-[5px] cursor-pointer h-fit w-auto", `${ButtonProps.className}`)} onClick={ButtonProps.onClick} disabled={ButtonProps.disabled}> 
       {ButtonProps.value}
     </button> 
   ) 
