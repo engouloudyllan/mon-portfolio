@@ -195,7 +195,7 @@ const MyPortfolio: React.FC = () => {
           </div>
           <div className="flex flex-col gap-50 items-center contentResponsive">
             <div className="flex flex-col gap-12 items-center">
-              <div className="flex gap-2.5 px-4 rounded-full items-center mt-35 relative z-10">
+              <div className="flex gap-2.5 px-4 rounded-full items-center mt-35 relative z-10 resizeMargin">
                 <span className="relative flex size-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-fixed opacity-75"></span>
                   <span className="relative inline-flex size-2 rounded-full bg-primary-fixed"></span>

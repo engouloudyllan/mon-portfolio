@@ -110,3 +110,19 @@ body {
     gap: 65px !important;
   }
 }
+
+@media screen and (max-height: 592px) {
+  .text1-responsive {
+    font-size: 46px !important;
+  }
+
+  .text2-responsive {
+    font-size: 48px !important;
+  }
+  .contentResponsive {
+    gap: 15px !important;
+  }
+  .resizeMargin {
+    margin-top: 130px !important;
+  }
+}
