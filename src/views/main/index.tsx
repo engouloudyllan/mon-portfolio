@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { HiSlash } from "react-icons/hi2";
@@ -107,7 +107,6 @@ const MyPortfolio: React.FC = () => {
       color: "#000000",
     },
   ];
-
 
   return (
     <>
@@ -497,8 +496,16 @@ const MyPortfolio: React.FC = () => {
                 </div>
               </div>
               <div className="flex gap-3 items-center justify-center max-useCase3:flex-col">
-                <ButtonStyle value="Voir mes projets" onClick={() => null} className="relative z-10 font-semibold font-body text-[15px] text-nowrap" />
-                <ButtonStyle value="Télécharger CV" onClick={() => null} className="relative z-10 font-semibold font-body text-[15px] text-nowrap bg-transparent glass-container text-white" />
+                <ButtonStyle
+                  value="Voir mes projets"
+                  onClick={() => null}
+                  className="relative z-10 font-semibold font-body text-[15px] text-nowrap"
+                />
+                <ButtonStyle
+                  value="Télécharger CV"
+                  onClick={() => null}
+                  className="relative z-10 font-semibold font-body text-[15px] text-nowrap bg-transparent glass-container text-white"
+                />
               </div>
             </div>
             <div>

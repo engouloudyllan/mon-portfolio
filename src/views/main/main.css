@@ -97,3 +97,16 @@ body {
     font-size: 52px !important;
   }
 }
+
+@media screen and (max-height: 630px) {
+  .text1-responsive {
+    font-size: 48px !important;
+  }
+
+  .text2-responsive {
+    font-size: 50px !important;
+  }
+  .contentResponsive {
+    gap: 65px !important;
+  }
+}
