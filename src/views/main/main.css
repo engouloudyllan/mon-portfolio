@@ -18,28 +18,22 @@
 }
 
 body {
-  background: radial-gradient(
-    circle at center,
-    rgba(132, 255, 99, 0.08),
-    transparent 60%
-  );
+  background: radial-gradient(circle at center,
+      rgba(132, 255, 99, 0.08),
+      transparent 60%);
 }
 
 .gradient-bg {
   background:
-    radial-gradient(
-      800px circle at 50% 35%,
+    radial-gradient(800px circle at 50% 35%,
       rgba(163, 255, 18, 0.12),
       rgba(163, 255, 18, 0.06) 25%,
       rgba(163, 255, 18, 0.03) 40%,
-      transparent 70%
-    ),
-    radial-gradient(
-      1200px circle at 50% 50%,
+      transparent 70%),
+    radial-gradient(1200px circle at 50% 50%,
       transparent 0%,
       rgba(0, 0, 0, 0.7) 60%,
-      rgba(0, 0, 0, 0.95) 100%
-    );
+      rgba(0, 0, 0, 0.95) 100%);
 
   filter: blur(60px);
 }
@@ -106,6 +100,7 @@ body {
   .text2-responsive {
     font-size: 50px !important;
   }
+
   .contentResponsive {
     gap: 65px !important;
   }
@@ -119,10 +114,41 @@ body {
   .text2-responsive {
     font-size: 48px !important;
   }
+
   .contentResponsive {
     gap: 5px !important;
   }
+
   .resizeMargin {
     margin-top: 130px !important;
   }
 }
+
+@media screen and (max-width: 1698px) {
+  .contentAbout {
+    padding: 60px 100px !important;
+  }
+}
+
+@media screen and (max-width: 1530px) {
+  .contentAbout {
+    padding: 50px 45px !important;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  .contentAbout1 {
+    font-size: 14px !important;
+  }
+  .contentAbout2 {
+    font-size: 40px !important;
+  }
+  .contentAbout3 {
+    font-size: 18px !important;   
+  }
+  .contentAbout4 {
+    font-size: 16px !important;   
+  }
+}
+
+

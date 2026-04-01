@@ -57,8 +57,10 @@
   );
 
   --breakpoint-xl: 1218px;
+   --breakpoint-xll: 1258px;
   --breakpoint-useCase1: 1110px;
   --breakpoint-useCase2: 520px;
     --breakpoint-useCase3: 440px;
   --breakpoint-h-md: 828px;
+  --breakpoint-md: 756px;
 }

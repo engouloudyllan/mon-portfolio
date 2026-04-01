@@ -513,6 +513,49 @@ const MyPortfolio: React.FC = () => {
             </div>
           </div>
         </div>
+        {/*********************************************  Section about ******************************************/}
+        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 mb-10">
+          <div className="w-full h-auto bg-surface-low px-50 py-20 mx-auto max-w-437.5 rounded-2xl flex flex-row items-center justify-between contentAbout max-xll:flex-col max-xll:gap-16 max-useCase2:p-8!">
+            <div className="flex flex-col gap-10 -translate-y-35 max-xll:translate-y-0 max-xll:items-center max-xll:text-center">
+              <span className="text-[16px] uppercase text-primary-fixed font-body word-spacing-[0.1em] contentAbout1 font-medium">
+                À propos de moi
+              </span>
+              <p className="text-[48px] font-bold font-body text-white leading-[1.10] contentAbout2 max-md:hidden">
+                Donner du sens <br /> au code par le{" "}
+                <span className="text-[#6b7280] italic">design</span> <br /> et
+                la <span className="text-[#6b7280] italic">performance</span>.
+              </p>
+            </div>
+            <div className="flex flex-col gap-25">
+              <div className="flex flex-col gap-4">
+                <p className="text-[#c6c8b2] text-[22px] font-body max-w-160 mt-6 leading-10 word-spacing-[0.2em] contentAbout3 max-xll:text-center max-md:text-[16px]! max-md:w-full max-md:mt-0">
+                  Je suis développeur Fullstack JavaScript, animé par la
+                  création d’expériences digitales modernes et performantes. Mon
+                  approche repose sur un équilibre entre rigueur technique et
+                  sens du design — où chaque ligne de code a une intention, et
+                  chaque interface apporte de la clarté.
+                </p>
+                <p className="text-[#c6c8b2] text-[17px] font-body max-w-160 mt-6 leading-8 word-spacing-[0.2em] contentAbout4 max-xll:text-center max-md:text-[14px]! max-md:w-full">
+                  Formé sur un écosystème fullstack complet incluant React,
+                  Node.js et le design UI/UX, je conçois des applications
+                  fiables, évolutives et centrées utilisateur. Pour moi, un bon
+                  produit ne se limite pas à fonctionner — il se construit avec
+                  précision, cohérence et souci du détail.
+                </p>
+              </div>
+              <div className="flex gap-12 max-xll:justify-end">
+                <div className="flex flex-col gap-4">
+                    <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">01+</span>
+                    <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">Années EXP.</span>
+                </div>
+                <div className="flex flex-col gap-4">
+                    <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">00</span>
+                    <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">projet(s) livré(s)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );
