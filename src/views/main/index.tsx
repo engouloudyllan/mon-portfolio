@@ -7,7 +7,14 @@ import { MdDarkMode } from "react-icons/md";
 import ButtonStyle from "../../components/ui/Button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaChevronDown } from "react-icons/fa6";
+import {
+  CircleStackIcon,
+  CommandLineIcon,
+  CloudIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import "./main.css";
+import StackProgression from "../../components/ui/StackProgression";
 
 const MyPortfolio: React.FC = () => {
   const itemsTechnos = [
@@ -108,6 +115,131 @@ const MyPortfolio: React.FC = () => {
     },
   ];
 
+  const StackFront = [
+    {
+      label: "HTML",
+      value: 100,
+      colorClass: "text-orange-500",
+    },
+    {
+      label: "CSS",
+      value: 90,
+      colorClass: "text-blue-500",
+    },
+    {
+      label: "Tailwind CSS",
+      value: 85,
+      colorClass: "text-teal-500",
+    },
+    {
+      label: "JavaScript",
+      value: 95,
+      colorClass: "text-yellow-500",
+    },
+    {
+      label: "TypeScript",
+      value: 80,
+      colorClass: "text-blue-600",
+    },
+    {
+      label: "React",
+      value: 90,
+      colorClass: "text-cyan-500",
+    },
+    {
+      label: "React Native",
+      value: 70,
+      colorClass: "text-cyan-600",
+    },
+  ];
+
+  const StackBack = [
+    {
+      label: "Node.js",
+      value: 90,
+      colorClass: "text-green-500",
+    },
+    {
+      label: "Express.js",
+      value: 85,
+      colorClass: "text-gray-800",
+    },
+    {
+      label: "Nest.js",
+      value: 1,
+      colorClass: "text-red-500",
+    },
+    {
+      label: "Socket.io",
+      value: 10,
+      colorClass: "text-gray-900",
+    },
+    {
+      label: "Prisma",
+      value: 80,
+      colorClass: "text-[#090a15]",
+    },
+    {
+      label: "MySQL",
+      value: 80,
+      colorClass: "text-blue-700",
+    },
+    {
+      label: "MongoDB",
+      value: 10,
+      colorClass: "text-green-700",
+    },
+  ];
+
+  const StackDevOps = [
+    {
+      label: "Git & Github",
+      value: 90,
+      colorClass: "text-gray-900",
+    },
+    {
+      label: "Netlify",
+      value: 80,
+      colorClass: "text-teal-500",
+    },
+    {
+      label: "Vercel",
+      value: 70,
+      colorClass: "text-gray-900",
+    },
+    {
+      label: "Render",
+      value: 60,
+      colorClass: "text-purple-500",
+    },
+    {
+      label: "Docker",
+      value: 10,
+      colorClass: "text-blue-600",
+    },
+  ];
+  const StackArchitecture = [
+    {
+      label: "REST API",
+      value: 85,
+      colorClass: "text-blue-500",
+    },
+    {
+      label: "Microservices",
+      value: 3,
+      colorClass: "text-pink-500",
+    },
+    {
+      label: "Figma",
+      value: 70,
+      colorClass: "text-purple-500",
+    },
+    {
+      label: "Adobe XD",
+      value: 90,
+      colorClass: "text-pink-500",
+    },
+  ];
   return (
     <>
       <header className="w-full h-18 bg-surface/30 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b-[1.6px] border-primary-fixed/10 flex items-center justify-center max-useCase1:h-16">
@@ -514,7 +646,7 @@ const MyPortfolio: React.FC = () => {
           </div>
         </div>
         {/*********************************************  Section about ******************************************/}
-        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 mb-10">
+        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25">
           <div className="w-full h-auto bg-surface-low px-50 py-20 mx-auto max-w-437.5 rounded-2xl flex flex-row items-center justify-between contentAbout max-xll:flex-col max-xll:gap-16 max-useCase2:p-8!">
             <div className="flex flex-col gap-10 -translate-y-35 max-xll:translate-y-0 max-xll:items-center max-xll:text-center">
               <span className="text-[16px] uppercase text-primary-fixed font-body word-spacing-[0.1em] contentAbout1 font-medium">
@@ -545,12 +677,126 @@ const MyPortfolio: React.FC = () => {
               </div>
               <div className="flex gap-12 max-xll:justify-end">
                 <div className="flex flex-col gap-4">
-                    <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">01+</span>
-                    <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">Années EXP.</span>
+                  <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">
+                    01+
+                  </span>
+                  <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">
+                    Années EXP.
+                  </span>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">00</span>
-                    <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">projet(s) livré(s)</span>
+                  <span className="text-primary-fixed text-[40px] font-roboto font-bold max-useCase2:text-[30px]">
+                    00
+                  </span>
+                  <span className="font-roboto font-medium text-[17px] text-[#6b7280] uppercase max-useCase2:text-[12px]">
+                    projet(s) livré(s)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*********************************************  Section skills ******************************************/}
+        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 py-30">
+          <div className="w-full flex flex-col items-center gap-10">
+            <div className="flex flex-col items-center gap-4">
+              <h2 className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[31px]">
+                Mon Environnement{" "}
+                <span className="text-primary-fixed">Technique</span>
+              </h2>
+              <p className="text-[#c6c8b2] text-[17px] font-body max-w-260 mt-6 leading-8 word-spacing-[0.2em] contentAbout4 text-center max-md:text-[14px]! max-md:w-full">
+                Une sélection des outils et technologies que j’utilise pour
+                concevoir des applications modernes et évolutives. Mon
+                expérience couvre à la fois le frontend et le backend, avec une
+                attention particulière portée à la performance, à l’expérience
+                utilisateur et à la qualité du code. En constante progression,
+                chaque technologie présentée reflète une pratique concrète et
+                une bonne compréhension des enjeux réels.
+              </p>
+            </div>
+            <div className="flex gap-4 flex-wrap justify-center">
+              <div className="p-10 rounded-md bg-surface-low flex flex-col gap-8">
+                <div>
+                  <CommandLineIcon className="size-9 text-[#f1f5c9]" />
+                </div>
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-white font-body font-bold text-[30px] capitalize">
+                    frontend
+                  </h2>
+                  <div className="flex gap-4 flex-col">
+                    {StackFront.map((skill, index) => (
+                      <StackProgression
+                        key={index}
+                        label={skill.label}
+                        value={skill.value}
+                        size={50}
+                        colorClass={skill.colorClass}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="p-10 rounded-md bg-surface-low flex flex-col gap-8">
+                <div>
+                  <CircleStackIcon className="size-9 text-[#8694fb]" />
+                </div>
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-white font-body font-bold text-[30px] capitalize">
+                    backend
+                  </h2>
+                  <div className="flex gap-4 flex-col">
+                    {StackBack.map((skill, index) => (
+                      <StackProgression
+                        key={index}
+                        label={skill.label}
+                        value={skill.value}
+                        size={50}
+                        colorClass={skill.colorClass}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="p-10 rounded-md bg-surface-low flex flex-col gap-8 h-fit!">
+                <div>
+                  <CloudIcon className="size-9 text-[#58f1c9]" />
+                </div>
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-white font-body font-bold text-[30px] capitalize">
+                    devOps
+                  </h2>
+                  <div className="flex gap-4 flex-col">
+                    {StackDevOps.map((skill, index) => (
+                      <StackProgression
+                        key={index}
+                        label={skill.label}
+                        value={skill.value}
+                        size={50}
+                        colorClass={skill.colorClass}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="p-10 rounded-md bg-surface-low flex flex-col gap-8 h-fit! stackError">
+                <div>
+                  <WrenchScrewdriverIcon className="size-9 text-[#e6667a]" />
+                </div>
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-white font-body font-bold text-[30px] capitalize">
+                    Architecture
+                  </h2>
+                  <div className="flex gap-4 flex-col">
+                    {StackArchitecture.map((skill, index) => (
+                      <StackProgression
+                        key={index}
+                        label={skill.label}
+                        value={skill.value}
+                        size={50}
+                        colorClass={skill.colorClass}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

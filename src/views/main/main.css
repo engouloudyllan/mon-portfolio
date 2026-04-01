@@ -18,9 +18,7 @@
 }
 
 body {
-  background: radial-gradient(circle at center,
-      rgba(132, 255, 99, 0.08),
-      transparent 60%);
+  background: #131316;
 }
 
 .gradient-bg {
@@ -150,5 +148,7 @@ body {
     font-size: 16px !important;   
   }
 }
+
+
 
 
