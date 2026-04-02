@@ -14,7 +14,15 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 import "./main.css";
-import StackProgression from "../../components/ui/StackProgression";
+import StackProgression from "../../components/common/StackProgression";
+import project1Img from "../../assets/images/project1.png";
+import project2Img from "../../assets/images/int.webp";
+import project3Img from "../../assets/images/project3.jpg";
+import project4Img from "../../assets/images/project4.jpg";
+import project5Img from "../../assets/images/project5.png";
+import { IoMdLink } from "react-icons/io";
+import { IoCode } from "react-icons/io5";
+import Pourcentage from "../../components/ui/Pourcentage";
 
 const MyPortfolio: React.FC = () => {
   const itemsTechnos = [
@@ -218,6 +226,7 @@ const MyPortfolio: React.FC = () => {
       colorClass: "text-blue-600",
     },
   ];
+  const filterProjects = ["Tous", "Frontend", "Backend", "Fullstack"];
   const StackArchitecture = [
     {
       label: "REST API",
@@ -320,7 +329,10 @@ const MyPortfolio: React.FC = () => {
       </header>
       <main>
         {/*********************************************  Section Hero ******************************************/}
-        <div className="w-full h-auto bg-surface relative flex justify-center items-end min-h-screen">
+        <div
+          className="w-full h-auto bg-surface relative flex justify-center items-end min-h-screen"
+          id="accueil"
+        >
           {/**<div className="absolute inset-0 bg-primary-fixed/5 blur-2xl rounded-full w-auto h-screen max-w-200 mx-auto" />**/}
           <div className="absolute w-full h-screen flex justify-center items-center inset-0 z-0 ">
             <div className="gradient-bg w-full h-screen translate-y-15" />
@@ -646,7 +658,10 @@ const MyPortfolio: React.FC = () => {
           </div>
         </div>
         {/*********************************************  Section about ******************************************/}
-        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25">
+        <div
+          className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 mb-20"
+          id="a_propos"
+        >
           <div className="w-full h-auto bg-surface-low px-50 py-20 mx-auto max-w-437.5 rounded-2xl flex flex-row items-center justify-between contentAbout max-xll:flex-col max-xll:gap-16 max-useCase2:p-8!">
             <div className="flex flex-col gap-10 -translate-y-35 max-xll:translate-y-0 max-xll:items-center max-xll:text-center">
               <span className="text-[16px] uppercase text-primary-fixed font-body word-spacing-[0.1em] contentAbout1 font-medium">
@@ -697,8 +712,11 @@ const MyPortfolio: React.FC = () => {
           </div>
         </div>
         {/*********************************************  Section skills ******************************************/}
-        <div className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 py-30">
-          <div className="w-full flex flex-col items-center gap-10">
+        <div
+          className="w-full bg-[#0e0e10] flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 py-30"
+          id="competences"
+        >
+          <div className="w-full flex flex-col items-center gap-10 max-w-437.5 mx-auto">
             <div className="flex flex-col items-center gap-4">
               <h2 className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[31px]">
                 Mon Environnement{" "}
@@ -796,6 +814,388 @@ const MyPortfolio: React.FC = () => {
                         colorClass={skill.colorClass}
                       />
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*********************************************  Section projects ******************************************/}
+        <div
+          className="w-full bg-surface flex justify-center items-center h-auto py-30"
+          id="projects"
+        >
+          <div className="flex flex-col gap-13 max-w-410 px-5 mx-auto max-useCase2:px-3.25 w-full">
+            <div className="flex justify-between max-useCase1:flex-col items-center max-useCase1:gap-18">
+              <div className="flex flex-col max-useCase1:gap-10">
+                <h2 className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[31px]">
+                  Créations Digitales
+                </h2>
+                <span className="text-[16px] font-medium text-white font-body text-center min-useCase1:hidden">Un aperçu de mon approche à travers des réalisations concrètes.</span>
+              </div>
+              <div className="flex gap-3 max-useCase2:flex-wrap justify-center">
+                {filterProjects.map((filter, index) => (
+                  <ButtonStyle
+                    key={index}
+                    value={filter}
+                    onClick={() => null}
+                    className={`text-[14px] font-medium py-2 px-6 rounded-xl ${index === 0 ? "bg-primary-fixed" : "bg-surface-highest text-[#6b7280]"}`}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="w-full grid grid-cols-3 gap-8 max-[1170px]:grid-cols-2 max-[804px]:grid-cols-1 max-[804px]:max-w-135 mx-auto">
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project1Img}
+                    alt="img_portfolio"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Portfolio
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Un portfolio digital moderne combinant une interface fluide
+                    pour les visiteurs et un back office puissant pour la
+                    gestion et l’analyse. Construit avec React, TypeScript,
+                    TailwindCSS et Express.js, il allie performance, esthétique
+                    et contrôle total.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="Express.js"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={20}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project2Img}
+                    alt="img_siteEcommerce"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Institute L.C.M
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Une solution e-commerce sur mesure pour la vente de livres,
+                    pensée pour offrir simplicité, fluidité et fiabilité aux
+                    utilisateurs. Dotée de paiements multi-canaux (Orange Money,
+                    Mobile Money, PayPal) et conçue avec React, TypeScript,
+                    TailwindCSS et Express.js.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={5}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project3Img}
+                    alt="img_portfolio"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Portfolio
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Un portfolio digital moderne combinant une interface fluide
+                    pour les visiteurs et un back office puissant pour la
+                    gestion et l’analyse. Construit avec React, TypeScript,
+                    TailwindCSS et Express.js, il allie performance, esthétique
+                    et contrôle total.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="Express.js"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={20}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project2Img}
+                    alt="img_siteEcommerce"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Institute L.C.M
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Une solution e-commerce sur mesure pour la vente de livres,
+                    pensée pour offrir simplicité, fluidité et fiabilité aux
+                    utilisateurs. Dotée de paiements multi-canaux (Orange Money,
+                    Mobile Money, PayPal) et conçue avec React, TypeScript,
+                    TailwindCSS et Express.js.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={5}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project4Img}
+                    alt="img_portfolio"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Portfolio
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Un portfolio digital moderne combinant une interface fluide
+                    pour les visiteurs et un back office puissant pour la
+                    gestion et l’analyse. Construit avec React, TypeScript,
+                    TailwindCSS et Express.js, il allie performance, esthétique
+                    et contrôle total.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="Express.js"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={20}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col bg-[#0e0e10] border-[1.35px] border-[#161618] rounded-[10px] overflow-hidden hover:border-primary-fixed/10 hover:border transition-all duration-300 projectCard">
+                <div className="relative w-full h-68 border-b-[1.35px] border-[#161618] overflow-hidden">
+                  <img
+                    src={project5Img}
+                    alt="img_siteEcommerce"
+                    className="w-full h-full bg-cover object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="p-6 flex-col flex gap-3">
+                  <h2 className="text-2xl font-body font-bold text-white">
+                    Institute L.C.M
+                  </h2>
+                  <p className="text-[#c6c8b2] text-[16px] font-body my-2 leading-6 word-spacing-[0.2em]">
+                    Une solution e-commerce sur mesure pour la vente de livres,
+                    pensée pour offrir simplicité, fluidité et fiabilité aux
+                    utilisateurs. Dotée de paiements multi-canaux (Orange Money,
+                    Mobile Money, PayPal) et conçue avec React, TypeScript,
+                    TailwindCSS et Express.js.
+                  </p>
+                  <div className="flex gap-3 my-4 w-[83%] flex-wrap">
+                    <ButtonStyle
+                      value="React"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TypeScript"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                    <ButtonStyle
+                      value="TailwindCSS"
+                      className="bg-[#393F25] text-primary-fixed text-[14px] font-medium py-1 px-3 rounded-xs cursor-default"
+                    />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="flex gap-5">
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoMdLink className="size-4.5 text-white mt-0.5" />
+                        <span className="text-[14px] text-white font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                      <div className="flex gap-2 items-center cursor-pointer translate-y-2">
+                        <IoCode className="size-4.5 text-[#6b7280] mt-0.3" />
+                        <span className="text-[14px] text-[#6b7280] font-medium ">
+                          Live Demo
+                        </span>
+                      </div>
+                    </div>
+                    <Pourcentage
+                      value={5}
+                      size={40}
+                      strokeWidth={6}
+                      colorClass="text-primary-fixed"
+                    />
                   </div>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import { cn } from '../../helpers/cn'
 
 interface ButtonProps {
     value: string;
-    onClick: () => void;
+    onClick?: () => void;
     disabled?: boolean;
     className?: string;
 };
