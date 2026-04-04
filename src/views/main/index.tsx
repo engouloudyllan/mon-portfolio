@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { HiSlash } from "react-icons/hi2";
