@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { HiSlash } from "react-icons/hi2";
@@ -23,6 +23,7 @@ import project5Img from "../../assets/images/project5.png";
 import { IoMdLink } from "react-icons/io";
 import { IoCode } from "react-icons/io5";
 import Pourcentage from "../../components/ui/Pourcentage";
+import Experience from "../../components/common/Experience";
 
 const MyPortfolio: React.FC = () => {
   const itemsTechnos = [
@@ -249,6 +250,21 @@ const MyPortfolio: React.FC = () => {
       colorClass: "text-pink-500",
     },
   ];
+
+  /*const itemsRef = React.useRef<HTMLDivElement[]>([]);
+
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !itemsRef.current.includes(el)) {
+      itemsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    itemsRef.current.forEach((div) => {
+      div.addEventListener("click", () => {});
+    });
+  }, []); **/ //A mémoriser !!!
+
   return (
     <>
       <header className="w-full h-18 bg-surface/30 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b-[1.6px] border-primary-fixed/10 flex items-center justify-center max-useCase1:h-16">
@@ -291,7 +307,7 @@ const MyPortfolio: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#projets"
+                  href="#projects"
                   className="font-body text-[#97979F] text-[1.01rem] font-normal max-xl:text-[14px]"
                 >
                   Projets
@@ -831,7 +847,10 @@ const MyPortfolio: React.FC = () => {
                 <h2 className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[31px]">
                   Créations Digitales
                 </h2>
-                <span className="text-[16px] font-medium text-white font-body text-center min-useCase1:hidden">Un aperçu de mon approche à travers des réalisations concrètes.</span>
+                <span className="text-[16px] font-medium text-white font-body text-center min-useCase1:hidden">
+                  Un aperçu de mon approche à travers des réalisations
+                  concrètes.
+                </span>
               </div>
               <div className="flex gap-3 max-useCase2:flex-wrap justify-center">
                 {filterProjects.map((filter, index) => (
@@ -1199,6 +1218,55 @@ const MyPortfolio: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        {/*********************************************  Section Experience ******************************************/}
+        <div
+          className="w-full bg-[#131313] flex justify-center items-center h-auto py-30"
+          id="experiences"
+        >
+          <div className="w-full flex flex-col items-center gap-24 max-w-410 mx-auto px-5 max-useCase2:px-3.25">
+            <h2 className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[31px]">
+              Parcours & Expériences
+            </h2>
+            <div className="w-full h-auto flex flex-col gap-18">
+              <Experience
+                title="Parcours & Expériences"
+                description=" Formation Développeur Fullstack Node.js 2024 – 2025 · Centre
+                    de Formation GetSmarter Formation intensive axée sur le
+                    développement d’applications web modernes, couvrant
+                    l’ensemble de la chaîne technique, du frontend au backend.
+                    Acquisition de solides compétences en HTML, CSS, JavaScript
+                    et TypeScript, ainsi qu’en conception d’interfaces avec
+                    React et TailwindCSS. Côté backend, mise en pratique avec
+                    Node.js, Express et NestJS, accompagnée de la gestion de
+                    bases de données SQL et NoSQL (MongoDB). La formation inclut
+                    également la modélisation UML, l’analyse de projets et les
+                    fondamentaux du design UI/UX, permettant d’aborder chaque
+                    projet avec une vision complète, à la fois technique et
+                    produit."
+                date="2024 — Fin 2025"
+                role="TRAINING"
+                stack="fullstack developpement . ui/ux design"
+                company="Getsmarter"
+                lieu="Logpom Carrefour Market, Douala, Cameroun"
+              />
+              <Experience
+                title="Exploration & Projets Personnels"
+                description=" Une démarche continue d’apprentissage à travers la création
+                    de projets concrets, me permettant d’expérimenter, de
+                    structurer mes idées et de consolider mes compétences
+                    techniques. Chaque projet devient un véritable terrain
+                    d’exploration, où je travaille aussi bien la performance que
+                    le design et la logique produit. Cette approche me permet de
+                    renforcer ma capacité à concevoir des applications
+                    complètes, à résoudre des problématiques réelles et à
+                    affiner progressivement ma vision du développement moderne,
+                    entre rigueur technique et expérience utilisateur."
+                date="2026 — Présent"
+                role="PERSONAL WORK"
+              />
             </div>
           </div>
         </div>
