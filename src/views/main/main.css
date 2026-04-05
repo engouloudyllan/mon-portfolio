@@ -174,3 +174,7 @@ body {
   transform: scale(1.12) rotate(1deg);
   filter: grayscale(0%) brightness(1.1);
 }
+
+.aSapp:hover .icone {
+  color: #25d366;
+}

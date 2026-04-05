@@ -24,6 +24,10 @@ import { IoMdLink } from "react-icons/io";
 import { IoCode } from "react-icons/io5";
 import Pourcentage from "../../components/ui/Pourcentage";
 import Experience from "../../components/common/Experience";
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const MyPortfolio: React.FC = () => {
   const itemsTechnos = [
@@ -250,20 +254,142 @@ const MyPortfolio: React.FC = () => {
       colorClass: "text-pink-500",
     },
   ];
+  const testimonials = [
+    {
+      message:
+        "Un talent rare. Livraison rapide, communication fluide et code impeccable. Je recommande vivement.",
+      name: "Alice Dupont",
+      role: "CTO @ StartUp Innov",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      whatsapp: "https://wa.me/33600000000",
+    },
+    {
+      message:
+        "Notre MVP a été lancé en un temps record grâce à son expertise technique. La scalabilité est au rendez-vous.",
+      name: "Marc Tremblay",
+      role: "Fondateur & CEO",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      whatsapp: "https://wa.me/33700000000",
+    },
+    {
+      message:
+        "Très professionnel et à l’écoute. Il a su transformer nos idées en une application performante et intuitive.",
+      name: "Sophie Laurent",
+      role: "Product Manager",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      whatsapp: "https://wa.me/33611111111",
+    },
+    {
+      message:
+        "Une collaboration fluide du début à la fin. Le résultat dépasse nos attentes, tant sur le plan technique que design.",
+      name: "David Ngoma",
+      role: "Entrepreneur",
+      avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+      whatsapp: "https://wa.me/237600000000",
+    },
+  ];
 
-  /*const itemsRef = React.useRef<HTMLDivElement[]>([]);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  const addToRefs = (el: HTMLDivElement | null) => {
-    if (el && !itemsRef.current.includes(el)) {
-      itemsRef.current.push(el);
+  const btnPrevious = React.useRef<HTMLDivElement>(null);
+  const btnNext = React.useRef<HTMLDivElement>(null);
+
+  const slidesElements = React.useRef<HTMLDivElement[]>([]);
+
+  const addSlideToRefs = (el: HTMLDivElement | null) => {
+    if (el && !slidesElements.current.includes(el)) {
+      slidesElements.current.push(el);
     }
   };
 
-  useEffect(() => {
-    itemsRef.current.forEach((div) => {
-      div.addEventListener("click", () => {});
-    });
-  }, []); **/ //A mémoriser !!!
+  const dotsElements = React.useRef<HTMLDivElement[]>([]);
+
+  const adddotToRefs = (el: HTMLDivElement | null) => {
+    if (el && !dotsElements.current.includes(el)) {
+      dotsElements.current.push(el);
+    }
+  };
+  const updateSlide = (newIndex: number) => {
+    if (newIndex < 0) {
+      newIndex = testimonials.length - 1;
+    }
+    if (newIndex >= testimonials.length) {
+      newIndex = 0;
+    }
+    setCurrentIndex(newIndex);
+  };
+
+  const Next = () => {
+    updateSlide(currentIndex + 1);
+  };
+
+  const Previous = () => {
+    updateSlide(currentIndex - 1);
+  };
+
+  const currentSlide = testimonials[currentIndex];
+
+  const touchStartX = React.useRef(0);
+  const touchEndX = React.useRef(0);
+  const [isDragging, setIsDragging] = React.useState(false);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const startX = e.touches[0].clientX;
+    touchStartX.current = startX;
+    touchEndX.current = startX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) {
+        // Swipe vers la gauche → previous
+        Previous();
+      } else {
+        // Swipe vers la droite → next
+        Next();
+      }
+    }
+    // Réinitialiser
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    const startX = e.clientX;
+    touchStartX.current = startX;
+    touchEndX.current = startX;
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    touchEndX.current = e.clientX;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+    const deltaX = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+    if (Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) Previous();
+      else Next();
+    }
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
+  };
+
+  React.useEffect(() => {}, []);
 
   return (
     <>
@@ -283,7 +409,7 @@ const MyPortfolio: React.FC = () => {
             <ul className="gap-8 flex flex-row">
               <li>
                 <a
-                  href="#accueil"
+                  href="#home"
                   className="font-body text-[#DFFD74] text-[1.01rem] font-normal max-xl:text-[14px]"
                 >
                   Accueil
@@ -291,7 +417,7 @@ const MyPortfolio: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#a_propos"
+                  href="#about"
                   className="font-body text-[#97979F] text-[1.01rem] font-normal max-xl:text-[14px]"
                 >
                   À propos
@@ -299,7 +425,7 @@ const MyPortfolio: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#competences"
+                  href="#skills"
                   className="font-body text-[#97979F] text-[1.01rem] font-normal max-xl:text-[14px]"
                 >
                   Compétences
@@ -323,7 +449,7 @@ const MyPortfolio: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#temoignages"
+                  href="#testimonials"
                   className="font-body text-[#97979F] text-[1.01rem] font-normal max-xl:text-[14px]"
                 >
                   Témoignages
@@ -347,7 +473,7 @@ const MyPortfolio: React.FC = () => {
         {/*********************************************  Section Hero ******************************************/}
         <div
           className="w-full h-auto bg-surface relative flex justify-center items-end min-h-screen"
-          id="accueil"
+          id="home"
         >
           {/**<div className="absolute inset-0 bg-primary-fixed/5 blur-2xl rounded-full w-auto h-screen max-w-200 mx-auto" />**/}
           <div className="absolute w-full h-screen flex justify-center items-center inset-0 z-0 ">
@@ -676,7 +802,7 @@ const MyPortfolio: React.FC = () => {
         {/*********************************************  Section about ******************************************/}
         <div
           className="w-full bg-surface flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 mb-20"
-          id="a_propos"
+          id="about"
         >
           <div className="w-full h-auto bg-surface-low px-50 py-20 mx-auto max-w-437.5 rounded-2xl flex flex-row items-center justify-between contentAbout max-xll:flex-col max-xll:gap-16 max-useCase2:p-8!">
             <div className="flex flex-col gap-10 -translate-y-35 max-xll:translate-y-0 max-xll:items-center max-xll:text-center">
@@ -730,7 +856,7 @@ const MyPortfolio: React.FC = () => {
         {/*********************************************  Section skills ******************************************/}
         <div
           className="w-full bg-[#0e0e10] flex justify-center px-5 items-center h-auto max-useCase2:px-3.25 py-30"
-          id="competences"
+          id="skills"
         >
           <div className="w-full flex flex-col items-center gap-10 max-w-437.5 mx-auto">
             <div className="flex flex-col items-center gap-4">
@@ -1223,7 +1349,7 @@ const MyPortfolio: React.FC = () => {
         </div>
         {/*********************************************  Section Experience ******************************************/}
         <div
-          className="w-full bg-[#131313] flex justify-center items-center h-auto py-30"
+          className="w-full bg-[#131313] flex justify-center items-center h-auto pt-30 pb-20"
           id="experiences"
         >
           <div className="w-full flex flex-col items-center gap-24 max-w-410 mx-auto px-5 max-useCase2:px-3.25">
@@ -1267,6 +1393,109 @@ const MyPortfolio: React.FC = () => {
                 date="2026 — Présent"
                 role="PERSONAL WORK"
               />
+            </div>
+          </div>
+        </div>
+        {/*********************************************  Section Testimonials ******************************************/}
+        <div
+          className="w-full bg-[#0a0a0a] flex justify-center items-center h-auto py-30"
+          id="testimonials"
+        >
+          <div className="w-full flex flex-col items-center gap-16 max-w-210 mx-auto px-5 max-useCase2:px-3.25 justify-center">
+            <div className="flex flex-col items-center gap-4">
+              <h4 className="text-[18px] font-body font-bold text-primary-fixed tracking-widest">
+                Avis
+              </h4>
+              <p className="text-[40px] font-bold text-white font-body text-center max-useCase2:text-[27px]">
+                Ce qu'ils disent de mon travail
+              </p>
+            </div>
+            <div className="flex gap-30 justify-center items-center max-xl:gap-8">
+              <div
+                className="flex items-center justify-center w-10 h-10 hover:bg-gray-600/4 rounded-full cursor-pointer transition-all duration-300 max-md:hidden"
+                ref={btnPrevious}
+                onClick={() => {
+                  Previous();
+                }}
+              >
+                <FaChevronLeft className="size-4 text-[#6b7280]" />
+              </div>
+              <div className="flex flex-col gap-8 items-center justify-center">
+                <div
+                  className={`max-w-147 flex overflow-hidden border shadow-sm rounded-md border-gray-600/3 select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                  onMouseDown={handleMouseDown}
+                  style={{ touchAction: "pan-y" }}
+                >
+                  <div className="flex w-auto">
+                    <div
+                      className="w-full p-4 bg-[#111111] flex flex-col gap-5 min-w-147 items max-[647px]:min-w-0"
+                      ref={addSlideToRefs}
+                    >
+                      <div className="flex justify-center items-center w-8 h-8 bg-gray-600/3 rounded-full">
+                        <FaQuoteLeft className="size-3.5 text-primary-fixed" />
+                      </div>
+                      <div>
+                        <p className="text-[#6b7280] font-body font-medium">
+                          {currentSlide.message}
+                        </p>
+                      </div>
+                      <div className="flex justify-between items-end w-full mt-4">
+                        <div className="flex gap-4 items-center">
+                          <div className="w-8.25 h-8.25">
+                            <img
+                              src={currentSlide.avatar}
+                              alt="img_prometer"
+                              className="w-full h-full object-cover rounded-full"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-0.5 ">
+                            <h5 className="text-white font-body font-bold text-[15px]">
+                              {currentSlide.name}
+                            </h5>
+                            <p className="text-[#6b7280] font-body text-[13px]">
+                              {currentSlide.role}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="w-8.25 h-8.25">
+                          <a
+                            href={currentSlide.whatsapp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full h-full flex items-center justify-center rounded-full bg-[#25d366] border border-green-800 hover:bg-white transition-all duration-300 aSapp"
+                          >
+                            <FaWhatsapp className="text-white size-5 icone" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center gap-2">
+                  {testimonials.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${index === currentIndex ? "bg-primary-fixed" : "bg-gray-600"}`}
+                      ref={adddotToRefs}
+                      onClick={() => {
+                        updateSlide(index);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div
+                className="flex items-center justify-center w-10 h-10 hover:bg-gray-600/4 rounded-full cursor-pointer transition-all duration-300 max-md:hidden"
+                ref={btnNext}
+                onClick={() => {
+                  Next();
+                }}
+              >
+                <FaChevronRight className="size-4 text-[#6b7280]" />
+              </div>
             </div>
           </div>
         </div>
